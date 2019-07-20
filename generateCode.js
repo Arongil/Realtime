@@ -44,7 +44,7 @@ var occlusionAccuracy = ` + occlusionAccuracy + `;
 var parametric = ` + parametric + `
 function f(x, y) {
     // Write your scalar field here.
-    ` + (functionString.indexOf("return") == -1 ? "return " + functionString : functionString) + `;
+    ` + (functionString.indexOf("return") == -1 ? "return " + functionString + ";" : functionString) + `
 }
 
 /*
