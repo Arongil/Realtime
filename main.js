@@ -23,6 +23,8 @@ class Graph {
         var fElement = document.getElementById("function"),
             functionString = fElement.value;
         eval("f = (x, y) => { " + (functionString.indexOf("return") == -1 ? "return " + functionString : functionString) + " };");
+        // Check whether f is a scalar field or a parametric surface.
+        parametric = f(0, 0) instanceof Array && f(0, 0).length == 3;
     }
 
     init() {
@@ -74,6 +76,8 @@ class Graph {
     settings() {
         var oLightStrength = lightStrength,
             oAmbientLight = ambientLight;
+
+        // Update lighting
         lightStrength = parseFloat(this.lightStrength.value);
         ambientLight = parseFloat(this.ambientLight.value);
         // Return if the user has fiddled with the settings.
