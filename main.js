@@ -17,6 +17,7 @@ class Graph {
 
         this.lightStrength = document.getElementById("light-strength");
         this.ambientLight = document.getElementById("ambient-light");
+        this.steps = document.getElementById("steps");
     }
 
     initFunction() {
@@ -75,11 +76,22 @@ class Graph {
 
     settings() {
         var oLightStrength = lightStrength,
-            oAmbientLight = ambientLight;
+            oAmbientLight = ambientLight,
+            oSteps = steps;
 
         // Update lighting
         lightStrength = parseFloat(this.lightStrength.value);
         ambientLight = parseFloat(this.ambientLight.value);
+
+        // Updates to steps require regraphing
+        steps = parseInt(this.steps.value);
+        if (oSteps !== steps) {
+            this.init();
+            this.active = false;
+            // this.init handles all redrawing, so there's no need for this.update to redraw again.
+            return false;
+        }
+
         // Return if the user has fiddled with the settings.
         return oLightStrength !== lightStrength ||
                oAmbientLight !== ambientLight;
