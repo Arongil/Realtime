@@ -2,7 +2,7 @@
 
 ## How to Move
 
-Click "Click Here to Start". Now you can use WASD to move back, forth, left, and right. Q moves you down, and E moves you up. Use the mouse to rotate your view.
+Click "Click Here to Start". Now you can use WASD to move back, forth, left, and right. Q moves you down, and E moves you up. Use the mouse to rotate your view. You can press the space bar to center your view.
 
 ## How to Graph
 
